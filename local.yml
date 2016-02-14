@@ -1,6 +1,4 @@
 - hosts: localhost
-  become: true
-  become_user: root
-  become_method: su
+  remote_user: root
   roles:
     - common
