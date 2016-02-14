@@ -10,5 +10,5 @@ install:
 #  - echo -e '[defaults]\nroles_path = ../roles/common/\nhostfile = ./tests/inventory' > ansible.cfg
 script:
   - ansible-playbook -i inventory --syntax-check local.yml --sudo
-  - ansible-playbook -i inventory --sudo -v --diff local.yml --sudo
+#  - ansible-playbook -i inventory --sudo -v --diff local.yml --sudo
   
