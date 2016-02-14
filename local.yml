@@ -1,4 +1,20 @@
 - hosts: localhost
-  remote_user: root
+  become: true
+  become_user: root
+  become_method: sudo
   roles:
     - common
+    - tls
+    - backupninja
+    - openvpn
+    - nginx
+    - openldap
+    - virtualmail
+    - prosody
+    - php-fpm
+    - roundcube
+    - mysql
+    - owncloud
+    - wordpress
+    - samba
+    - ldap-account-manager
