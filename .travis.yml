@@ -9,6 +9,6 @@ install:
   - echo -e 'localhost  ansible_connection=local' > inventory
 #  - echo -e '[defaults]\nroles_path = ../roles/common/\nhostfile = ./tests/inventory' > ansible.cfg
 script:
-  - ansible-playbook -i inventory --syntax-check role.yml
-  - ansible-playbook -i inventory --sudo -v --diff role.yml
+  - ansible-playbook -i inventory --syntax-check local.yml
+  - ansible-playbook -i inventory --sudo -v --diff local.yml
   
