@@ -4,11 +4,11 @@ python: "2.7"
 before_install:
  - sudo apt-get update -qq
  - sudo apt-get install -qq python-apt python-pycurl
+ - sudo apt-get install ansible
 install:
-  - pip install ansible
-  - echo -e 'localhost  ansible_connection=local' > tests/inventory
-  - echo -e '[defaults]\nroles_path = ../roles/common/\nhostfile = ./tests/inventory' > ansible.cfg
+  - echo -e 'localhost  ansible_connection=local' > inventory
+#  - echo -e '[defaults]\nroles_path = ../roles/common/\nhostfile = ./tests/inventory' > ansible.cfg
 script:
-  - ansible-playbook --syntax-check tests/role.yml
-  - ansible-playbook --sudo -v --diff tests/role.yml
+  - ansible-playbook -i invntory --syntax-check role.yml
+  - ansible-playbook -i invntory --sudo -v --diff role.yml
   
